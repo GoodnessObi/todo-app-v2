@@ -2,8 +2,8 @@ import React from 'react'
 
 const List = () => {
   return (
-    <ul id="display-list">
-      <li>
+    <ul className="TodoContent__list">
+      <li className='TodoContent__listItem'>
         <span className="text-content">Hey there</span>
         <span className="change-button">
           <button className="done">done</button>

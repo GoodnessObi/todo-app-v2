@@ -9,7 +9,7 @@ body {
   font-family: 'Pacifico', cursive;
 }
 
-.container {
+.TodoContent {
   border: 2px solid #4f3961;
   width: 40%;
   min-width: 350px;
@@ -17,6 +17,49 @@ body {
   padding: 0 0.5rem;
   border-radius: 0.5rem;
   background-color: #ea9085;
+
+  h1,
+  p {
+    text-align: center;
+    color: #260a3d;
+  }
+
+  p {
+    margin-top: 0.5rem;
+  }
+
+  &__body {
+    width: 100%;
+  }
+
+  &__list {
+    border-bottom: 2px solid #4f3961;
+    padding-left: 0;
+    list-style-position: none;
+    margin-bottom: 0;
+  }
+
+  &__listItem {
+    border: 1px solid #d45079;
+    width: 100%;
+    border-radius: 0.5rem;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    background-color: #fff;
+    font-family: 'Caveat', cursive;
+    color: #a3234c;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+
+    .text-content {
+      width: 60%;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+  } 
 }
 
 .enter-input {
@@ -35,15 +78,6 @@ body {
   border-bottom: 2px solid #4f3961;
 }
 
-h1,
-p {
-  text-align: center;
-  color: #260a3d;
-}
-
-p {
-  margin-top: 0.5rem;
-}
 
 #input-box {
   font-size: 2rem;
@@ -61,34 +95,11 @@ p {
   font-family: 'Caveat', cursive;
 }
 
-#display-list {
-  border-bottom: 2px solid #4f3961;
-  padding-left: 0;
-  list-style-position: none;
-  margin-bottom: 0;
-}
 
-li {
-  border: 1px solid #d45079;
-  width: 100%;
-  border-radius: 0.5rem;
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  background-color: #fff;
-  font-family: 'Caveat', cursive;
-  color: #a3234c;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-around;
-} 
 
-.text-content {
-  width: 60%;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
+
+
+
 
 #add-to-list {
   font-size: 1.5rem;

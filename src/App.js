@@ -5,10 +5,10 @@ import List from './components/list/List';
 
 const  App = () => {
   return (
-    <div className='container'>
+    <div className='TodoContent'>
       <h1>My To-Do List</h1>
       <AddItemForm />
-      <div className='display-container'>
+      <div className='TodoContent__body'>
         <List />
         <Buttons />
       </div>
