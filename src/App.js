@@ -16,6 +16,14 @@ const  App = () => {
     }
   ])
 
+  //set state from local storage  with useEffect when page loads
+  // On add save directly to local storage - remove save button
+  //clear button clears local storage
+  //wire up toggle on done list-item
+  //edit
+  //delete
+  //consider alternatively using a checkbox
+
   return (
     <div className='todo-content'>
       <h1>My To-Do List</h1>
