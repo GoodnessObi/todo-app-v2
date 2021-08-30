@@ -4,7 +4,7 @@ import ListItem from './ListItem'
 
 const List = ({ lists }) => {
   return (
-    <ul className="TodoContent__list">
+    <ul className="todo-content__list">
       {lists.map((list) => (
         <ListItem list={list} key={list.id} />
       ))}

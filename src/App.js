@@ -17,10 +17,10 @@ const  App = () => {
   ])
 
   return (
-    <div className='TodoContent'>
+    <div className='todo-content'>
       <h1>My To-Do List</h1>
       <AddItemForm />
-      <div className='TodoContent__body'>
+      <div className='todo-content__body'>
         <List lists={lists} />
         <Buttons />
       </div>

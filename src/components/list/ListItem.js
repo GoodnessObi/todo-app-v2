@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 
 const ListItem = ({ list }) => {
   return (
-    <li className='TodoContent__listItem'>
+    <li className='todo-content__list-item'>
       <span><button className="done">
         <i class="far fa-square"></i>
         {/* <i class="far fa-check-square"></i> */}
