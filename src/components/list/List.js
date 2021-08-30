@@ -1,17 +1,20 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+import ListItem from './ListItem'
 
-const List = () => {
+const List = ({ lists }) => {
   return (
     <ul className="TodoContent__list">
-      <li className='TodoContent__listItem'>
-        <span className="text-content">Hey there</span>
-        <span className="change-button">
-          <button className="done">done</button>
-          <button className="delete">delete</button>
-        </span>
-      </li>
+      {lists.map((list) => (
+        <ListItem list={list} key={list.id} />
+      ))}
+      
     </ul>
   )
+}
+
+List.propTypes = {
+  lists: PropTypes.array.isRequired
 }
 
 export default List
