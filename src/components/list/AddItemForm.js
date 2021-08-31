@@ -13,7 +13,6 @@ const AddItemForm = ({ addItem }) => {
         id: uuidv4(),
         date: new Date()
       }
-      console.log(newTodo, 'new')
       addItem(newTodo);
       setTodo('')
     }

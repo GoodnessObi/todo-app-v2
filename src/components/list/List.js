@@ -5,7 +5,7 @@ import ListItem from './ListItem'
 const List = ({ lists, editItem, deleteItem, isDone }) => {
   return (
     <ul className="todo-content__list">
-      {lists.map((list) => (
+      {lists.length > 0 && lists.map((list) => (
         <ListItem list={list} key={list.id} editItem={editItem} deleteItem={deleteItem} isDone={isDone} />
       ))}
     </ul>
@@ -13,7 +13,7 @@ const List = ({ lists, editItem, deleteItem, isDone }) => {
 }
 
 List.propTypes = {
-  lists: PropTypes.array.isRequired,
+  lists: PropTypes.array,
   editItem: PropTypes.func,
   deleteItem: PropTypes.func,
   isDone: PropTypes.func

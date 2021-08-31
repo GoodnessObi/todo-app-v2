@@ -5,33 +5,21 @@ import AddItemForm from './components/list/AddItemForm';
 import List from './components/list/List';
 
 const  App = () => {
-  const [lists, setLists] = useState([
-    {
-      id : 1,
-      listItem: 'Hey there'
-    },
-    {
-      id : 2,
-      listItem: 'Number two'
-    },
-    {
-      id : 3,
-      listItem: 'Another'
-    }
-  ]);
-  // const [listItem, set ]
+  const [lists, setLists] = useState(() => {
+    // getting stored value
+    const localData = localStorage.getItem('lists')
+    const initialValue = localData ? JSON.parse(localData) : [];
+    return initialValue;
+  });
 
   //set state from local storage  with useEffect when page loads
   useEffect(() => {
-    localStorage.getItem(lists)
+    localStorage.setItem('lists', JSON.stringify(lists)) 
   }, [lists]);
 
   // On add save directly to local storage - remove save button
-  const addItem = () => {
-    console.log('add to local storage')
-    // localStorage.setItem('lists', listItem)
-    // localStorage.setItem()
-
+  const addItem = (listItem) => {
+    setLists([...lists, listItem])    
   }
 
   //edit
