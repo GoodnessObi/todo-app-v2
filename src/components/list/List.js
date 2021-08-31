@@ -3,6 +3,11 @@ import PropTypes from 'prop-types'
 import ListItem from './ListItem'
 
 const List = ({ lists, editItem, deleteItem, isDone }) => {
+
+  if (lists.length === 0) {
+    return <p>No item on your list yet</p>
+  }
+
   return (
     <ul className="todo-content__list">
       {lists.length > 0 && lists.map((list) => (
