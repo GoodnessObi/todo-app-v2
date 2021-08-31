@@ -12,7 +12,7 @@ const  App = () => {
     return initialValue;
   });
 
-  //set state from local storage  with useEffect when page loads
+  //set state from local storage  with useEffect when
   useEffect(() => {
     localStorage.setItem('lists', JSON.stringify(lists)) 
   }, [lists]);
@@ -34,8 +34,8 @@ const  App = () => {
 
   //clear button clears local storage
   const clearList = () => {
-    console.log('clear')
     localStorage.removeItem('lists')
+    setLists([]);
   }
 
   //wire up toggle on done list-item
