@@ -15,6 +15,7 @@ const  App = () => {
   //set state from local storage  with useEffect when
   useEffect(() => {
     localStorage.setItem('lists', JSON.stringify(lists)) 
+    console.log(lists, 'useEffect' )
   }, [lists]);
 
   // On add save directly to local storage - remove save button
@@ -25,11 +26,16 @@ const  App = () => {
   //edit
   const editItem = (id) => {
     console.log('edit')
+    // setLists(()=> {
+    //   lists.map(list => list.id === todo.id ? todo : list)
+    // })
   }
 
   //delete
   const deleteItem = (id) => {
     console.log('delete')
+    const newList = lists.filter(list => list.id !== id)
+    setLists(newList)
   }
 
   //clear button clears local storage
