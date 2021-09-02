@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ListItem from './ListItem'
 
-const List = ({ lists, editItem, deleteItem, isDone }) => {
+const List = ({ lists, editItem, deleteItem, setCurrent }) => {
 
   if (lists.length === 0) {
     return <p>No item on your list yet</p>
@@ -11,7 +11,7 @@ const List = ({ lists, editItem, deleteItem, isDone }) => {
   return (
     <ul className="todo-content__list">
       {lists.length > 0 && lists.map((list) => (
-        <ListItem list={list} key={list.id} editItem={editItem} deleteItem={deleteItem} isDone={isDone} />
+        <ListItem list={list} key={list.id} editItem={editItem} deleteItem={deleteItem} setCurrent={setCurrent} />
       ))}
     </ul>
   )

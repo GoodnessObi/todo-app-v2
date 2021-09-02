@@ -1,22 +1,38 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-const AddItemForm = ({ addItem }) => {
+const AddItemForm = ({ addItem, current }) => {
   const [todo, setTodo] = useState('')
 
+  useEffect(() => {
+    if (current !== '') {
+      setTodo(current.todo)
+    } else {
+      setTodo('')
+    }
+  }, [current]);
+
   const saveItem = () => {
+    let newTodo;
     if (todo === '') {
       console.log('nope')
+      return;
+    }
+
+    if (current !== '') {
+      newTodo = {
+     
+      }
     } else {
-      const newTodo = {
+      newTodo = {
         todo,
         id: uuidv4(),
-        date: new Date()
+        date: new Date(),
+        isDone: false
       }
       addItem(newTodo);
       setTodo('')
     }
-    
   }
 
   return (

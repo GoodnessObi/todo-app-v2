@@ -12,6 +12,8 @@ const  App = () => {
     return initialValue;
   });
 
+  const [current, setCurrent] = useState('')
+
   //set state from local storage  with useEffect when
   useEffect(() => {
     localStorage.setItem('lists', JSON.stringify(lists)) 
@@ -26,6 +28,7 @@ const  App = () => {
   //edit
   const editItem = (id) => {
     console.log('edit')
+    
     // setLists(()=> {
     //   lists.map(list => list.id === todo.id ? todo : list)
     // })
@@ -45,18 +48,18 @@ const  App = () => {
   }
 
   //wire up toggle on done list-item
-  const isDone = () => {
-    console.log('isdone?')
-  }
+  // const isDone = () => {
+  //   console.log('isdone?')
+  // }
 
   //consider alternatively using a checkbox
 
   return (
     <div className='todo-content'>
       <h1>My To-Do List</h1>
-      <AddItemForm addItem={addItem} />
+      <AddItemForm addItem={addItem} current={current} setCurrent={setCurrent} />
       <div className='todo-content__body'>
-        <List lists={lists} editItem={editItem} deleteItem={deleteItem} isDone={isDone} />
+        <List lists={lists} editItem={editItem} deleteItem={deleteItem} current={current} setCurrent={setCurrent} />
         <Buttons clearList={clearList} />
       </div>
       <p>get doing ...</p>
