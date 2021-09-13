@@ -1,8 +1,19 @@
 import { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-const AddItemForm = ({ addItem, current }) => {
+const AddItemForm = ({ addItem, updateItem, current, setCurrent }) => {
   const [todo, setTodo] = useState('')
+
+  // const [contact, setContact] = useState({
+  //   name: '',
+  //   email: '',
+  //   phone: '',
+  //   type: 'personal'
+  // })
+
+  // const { name, email, phone, type} = contact
+
+  // const onChange = e => setContact({...contact, [e.target.name]: e.target.value}
 
   useEffect(() => {
     if (current !== '') {
@@ -20,9 +31,15 @@ const AddItemForm = ({ addItem, current }) => {
     }
 
     if (current !== '') {
-      newTodo = {
-     
+      console.log(todo)
+      const updatedTodo = {
+        todo,
+        id: current.id,
+        date: new Date(),
+        isDone: current.isDone
       }
+      console.log(updatedTodo, 'heyyyyy')
+      updateItem(updatedTodo)
     } else {
       newTodo = {
         todo,
@@ -31,8 +48,9 @@ const AddItemForm = ({ addItem, current }) => {
         isDone: false
       }
       addItem(newTodo);
-      setTodo('')
     }
+    setTodo('');
+    setCurrent('');
   }
 
   return (
