@@ -29,15 +29,6 @@ const  App = () => {
     setLists(lists.map(list => list.id === updatedItem.id ? updatedItem : list))
   }
 
-  //edit
-  const editItem = (id) => {
-    console.log('edit')
-    
-    // setLists(()=> {
-    //   lists.map(list => list.id === todo.id ? todo : list)
-    // })
-  }
-
   //delete
   const deleteItem = (id) => {
     console.log('delete')
@@ -63,7 +54,7 @@ const  App = () => {
       <h1>My To-Do List</h1>
       <AddItemForm addItem={addItem} updateItem={updateItem} current={current} setCurrent={setCurrent} />
       <div className='todo-content__body'>
-        <List lists={lists} editItem={editItem} deleteItem={deleteItem} current={current} setCurrent={setCurrent} />
+        <List lists={lists} deleteItem={deleteItem} current={current} setCurrent={setCurrent} />
         <Buttons clearList={clearList} />
       </div>
       <p>get doing ...</p>

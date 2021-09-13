@@ -5,13 +5,6 @@ const ListItem = ({ list, editItem, deleteItem, setCurrent }) => {
   const { id, todo } = list;
   const [isDone, setIsDone] = useState(false);
 
-
-  const edit = (id) => {
-    console.log(id, 'edit')
-    editItem(id);
-    // setCurrent()
-  }
-
   const toggle = (id) => {
     setIsDone(!isDone);
 
