@@ -36,7 +36,7 @@ const AddItemForm = ({ addItem, updateItem, current, setCurrent }) => {
         todo,
         id: current.id,
         date: new Date(),
-        done: current.isDone
+        done: current.done
       }
       console.log(updatedTodo, 'heyyyyy')
       updateItem(updatedTodo)

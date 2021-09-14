@@ -59,6 +59,11 @@ body {
       -moz-user-select: none;
       -ms-user-select: none;
       user-select: none;
+
+      &.true {
+        text-decoration: line-through;
+        color: #260a3d;
+      }
     }
   } 
 }
@@ -170,11 +175,6 @@ body {
 
 .delete:hover {
   color: #aa0808;
-}
-
-.clicked {
-  text-decoration: line-through;
-  color: #260a3d;
 }
 
 @media (min-width: 900px) {

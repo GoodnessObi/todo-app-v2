@@ -22,7 +22,7 @@ const ListItem = ({ list, updateItem, deleteItem, setCurrent }) => {
       <span className={`text-content ${done}`}>{todo}</span>
 
       <span className="change-button">
-        <button className="done" onClick={() => setCurrent(list)}><i className="far fa-edit"></i></button>
+        { !done && <button className="done" onClick={() => setCurrent(list)}><i className="far fa-edit"></i></button> }
         <button className="delete" onClick={() => deleteItem(id)}><i className="far fa-trash-alt"></i></button>
       </span>
     </li>
