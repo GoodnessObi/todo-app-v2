@@ -1,26 +1,25 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types'
 
 const ListItem = ({ list, updateItem, deleteItem, setCurrent }) => {
   const { id, todo, done } = list;
   const [isDone, setIsDone] = useState(done);
+  
 
-  const toggle = () => {
-    setIsDone(!isDone);
-
+  useEffect(() => {
     const updatedTodo = {
       ...list,
       done: isDone
     }
-    console.log(updatedTodo, 'Todo') 
     updateItem(updatedTodo);
-  }
+    // eslint-disable-next-line
+  }, [isDone]);
 
   return (
     <li className='todo-content__list-item'>
-      <input type="checkbox" checked={done} value={done} onChange={toggle} />
-
-      <span className="text-content">{todo}</span>
+      <input type="checkbox" checked={done} value={done} onChange={e => setIsDone(!isDone)} />
+      
+      <span className={`text-content ${done}`}>{todo}</span>
 
       <span className="change-button">
         <button className="done" onClick={() => setCurrent(list)}><i className="far fa-edit"></i></button>
@@ -32,7 +31,7 @@ const ListItem = ({ list, updateItem, deleteItem, setCurrent }) => {
 
 ListItem.propTypes = {
   list: PropTypes.object.isRequired,
-  editItem: PropTypes.func,
+  updateItem: PropTypes.func,
   deleteItem: PropTypes.func,
 }
 

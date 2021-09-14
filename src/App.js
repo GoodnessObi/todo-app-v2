@@ -17,7 +17,6 @@ const  App = () => {
   //set state from local storage  with useEffect when
   useEffect(() => {
     localStorage.setItem('lists', JSON.stringify(lists)) 
-    console.log(lists, 'useEffect' )
   }, [lists]);
 
   // On add save directly to local storage - remove save button
@@ -41,13 +40,6 @@ const  App = () => {
     localStorage.removeItem('lists')
     setLists([]);
   }
-
-  //wire up toggle on done list-item
-  // const isDone = () => {
-  //   console.log('isdone?')
-  // }
-
-  //consider alternatively using a checkbox
 
   return (
     <div className='todo-content'>
