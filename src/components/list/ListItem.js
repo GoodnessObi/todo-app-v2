@@ -1,25 +1,27 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types'
 
-const ListItem = ({ list, editItem, deleteItem, setCurrent }) => {
-  const { id, todo } = list;
-  const [isDone, setIsDone] = useState(false);
+const ListItem = ({ list, updateItem, deleteItem, setCurrent }) => {
+  const { id, todo, done } = list;
+  const [isDone, setIsDone] = useState(done);
 
-  const toggle = (id) => {
+  const toggle = () => {
     setIsDone(!isDone);
 
-    if (isDone === false) {
-      console.log(isDone, '>>>>>', id)
-      return;
+    const updatedTodo = {
+      ...list,
+      done: isDone
     }
-    console.log(isDone, 'true state', id)
-    return;
+    console.log(updatedTodo, 'Todo') 
+    updateItem(updatedTodo);
   }
 
   return (
     <li className='todo-content__list-item'>
-      <input type="checkbox" checked={isDone} value={isDone} onChange={e => toggle(id)}  />
+      <input type="checkbox" checked={done} value={done} onChange={toggle} />
+
       <span className="text-content">{todo}</span>
+
       <span className="change-button">
         <button className="done" onClick={() => setCurrent(list)}><i className="far fa-edit"></i></button>
         <button className="delete" onClick={() => deleteItem(id)}><i className="far fa-trash-alt"></i></button>

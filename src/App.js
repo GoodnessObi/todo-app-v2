@@ -54,7 +54,7 @@ const  App = () => {
       <h1>My To-Do List</h1>
       <AddItemForm addItem={addItem} updateItem={updateItem} current={current} setCurrent={setCurrent} />
       <div className='todo-content__body'>
-        <List lists={lists} deleteItem={deleteItem} current={current} setCurrent={setCurrent} />
+        <List lists={lists} deleteItem={deleteItem} current={current} setCurrent={setCurrent} updateItem={updateItem} />
         <Buttons clearList={clearList} />
       </div>
       <p>get doing ...</p>

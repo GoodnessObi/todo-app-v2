@@ -36,7 +36,7 @@ const AddItemForm = ({ addItem, updateItem, current, setCurrent }) => {
         todo,
         id: current.id,
         date: new Date(),
-        isDone: current.isDone
+        done: current.isDone
       }
       console.log(updatedTodo, 'heyyyyy')
       updateItem(updatedTodo)
@@ -45,7 +45,7 @@ const AddItemForm = ({ addItem, updateItem, current, setCurrent }) => {
         todo,
         id: uuidv4(),
         date: new Date(),
-        isDone: false
+        done: false
       }
       addItem(newTodo);
     }
