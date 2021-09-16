@@ -1,11 +1,16 @@
-import React from 'react'
+import { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import ListItem from './ListItem'
 
 const List = ({ lists, updateItem, deleteItem, setCurrent }) => {
 
   if (lists.length === 0) {
-    return <p>No item on your list yet</p>
+    return (
+      <Fragment>
+        <p>No item on your list yet</p> 
+        <hr style={{"width":"40%", "border":"1px solid #4f3961"}}/>
+      </Fragment>
+    )
   }
 
   return (
