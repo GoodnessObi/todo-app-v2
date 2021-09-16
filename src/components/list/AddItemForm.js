@@ -4,17 +4,6 @@ import { v4 as uuidv4 } from 'uuid';
 const AddItemForm = ({ addItem, updateItem, current, setCurrent }) => {
   const [todo, setTodo] = useState('')
 
-  // const [contact, setContact] = useState({
-  //   name: '',
-  //   email: '',
-  //   phone: '',
-  //   type: 'personal'
-  // })
-
-  // const { name, email, phone, type} = contact
-
-  // const onChange = e => setContact({...contact, [e.target.name]: e.target.value}
-
   useEffect(() => {
     if (current !== '') {
       setTodo(current.todo)
@@ -54,7 +43,7 @@ const AddItemForm = ({ addItem, updateItem, current, setCurrent }) => {
   }
 
   return (
-    <div className='enter-input'>
+    <form onSubmit={saveItem} className='enter-input'>
       <input 
         type="text"
         name="todo"
@@ -63,8 +52,8 @@ const AddItemForm = ({ addItem, updateItem, current, setCurrent }) => {
         onChange={e => setTodo(e.target.value)}
         placeholder="Add to your list . . ."
         />
-      <button id="add-to-list" onClick={saveItem}>Add</button>
-    </div>
+      <button type="submit" id="add-to-list" >Add</button>
+    </form>
   )
 }
 
