@@ -17,14 +17,14 @@ const ListItem = ({ list, updateItem, deleteItem, setCurrent }) => {
 
   return (
     <li className='todo-content__list-item'>
-      <input type="checkbox" checked={done} value={done} onChange={e => setIsDone(!isDone)} />
+      <input type="checkbox" className="checkbox" checked={done} value={done} onChange={e => setIsDone(!isDone)} />
       
-      <span className={`text-content ${done}`}>{todo}</span>
+      <div className={`text-content ${done}`}>{todo}</div>
 
-      <span className="change-button">
-        { !done && <button className="done" onClick={() => setCurrent(list)}><i className="far fa-edit"></i></button> }
-        <button className="delete" onClick={() => deleteItem(id)}><i className="far fa-trash-alt"></i></button>
-      </span>
+      <div className="todo-content__list-btns">
+        { !done && <button className="btn-edit" onClick={() => setCurrent(list)}><i className="far fa-edit"></i></button> }
+        <button className="btn-delete" onClick={() => deleteItem(id)}><i className="far fa-trash-alt"></i></button>
+      </div>
     </li>
   )
 }

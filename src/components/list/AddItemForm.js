@@ -43,16 +43,16 @@ const AddItemForm = ({ addItem, updateItem, current, setCurrent }) => {
   }
 
   return (
-    <form onSubmit={saveItem} className='enter-input'>
+    <form onSubmit={saveItem} className="todo-content__form">
       <input 
         type="text"
         name="todo"
         value={todo}
-        id="input-box"
+        className="todo-content__form-input"
         onChange={e => setTodo(e.target.value)}
         placeholder="Add to your list . . ."
         />
-      <button type="submit" id="add-to-list" >Add</button>
+      <button type="submit" className="todo-content__form-btn" >Add</button>
     </form>
   )
 }
