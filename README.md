@@ -19,4 +19,4 @@ Click [here](https://todo-appv2.netlify.app/) to view the deployed app
 ## Added Information
 This is an update over an earlier version.
 * Click [here](https://github.com/GoodnessObi/todo-app) to view the repo of the earlier version.
-* View the earlier [deployed site](https://goodnessobi.github.io/todo-app/)
+* View the earlier [deployed site](https://todo-app-version1.netlify.app/)
